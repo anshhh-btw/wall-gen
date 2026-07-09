@@ -243,21 +243,21 @@ function App() {
     return (
         <>
             <nav>
-                <div>
+                <motion.div initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
                     <p>WALL - GEN</p>
                     <p>GENERATE UNIQUE CUSTOMIZABLE WALLPAPERS</p>
-                </div>
+                </motion.div>
                 <div>
                     <ThemeButton />
                 </div>
             </nav>
             <main>
-                <div>
+                <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
                     <div>
                         <canvas width={width} height={height} ref={canvasRef}></canvas>
                     </div>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
                     <div>
                         <p>VARIANTS</p>
                         <div>
@@ -327,12 +327,12 @@ function App() {
                             <p>{copiedState ? "COPIED!" : "SHARE"}</p>
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </main>
-            <footer>
+            <motion.footer initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
                 <hr></hr>
                 <p>CREATED BY <a href='https://www.instagram.com/anshhh.btw'>@anshhh-btw</a></p>
-            </footer>
+            </motion.footer>
         </>)
 }
 

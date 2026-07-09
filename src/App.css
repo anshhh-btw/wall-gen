@@ -103,10 +103,11 @@ main {
 
     >div {
       width: 72vh;
-      height: 45vh;
+      aspect-ratio: 16/10;
       border-radius: 6px;
       border: 1px solid var(--font-color);
       overflow: hidden;
+
       canvas {
         width: 100%;
         height: 100%;
@@ -194,20 +195,22 @@ main {
         gap: 10px;
 
         >div {
-          width: 3vw;
-          height: 3vh;
+          width: 30px;
+          aspect-ratio: 16/10;
           background-color: var(--card-color);
           padding: 4px;
           border-radius: 5px;
           border: 1px solid var(--card-border-color);
           cursor: pointer;
-          img{
+
+          img {
             width: 100%;
             height: 100%;
             border-radius: 4px;
           }
         }
-        .activeVariant{
+
+        .activeVariant {
           border: 1px solid var(--font-color);
         }
 
@@ -261,13 +264,13 @@ main {
         }
       }
 
-      >div:nth-child(4){
+      >div:nth-child(4) {
         padding: 5px;
         background-color: var(--card-color);
         border-radius: 4px;
         border: 1px solid var(--card-border-color);
 
-        .variant3{
+        .variant3 {
           padding: 5px;
         }
       }
@@ -275,10 +278,12 @@ main {
 
     >div:nth-child(2) {
       width: 100%;
+
       >div {
         display: flex;
         gap: 7px;
         padding: 10px 2px;
+
         >div {
           scroll-snap-align: center;
           border: 1px solid var(--card-border-color);
@@ -321,7 +326,7 @@ main {
   }
 }
 
-footer{
+footer {
   text-align: center;
   font-family: var(--font-main);
   font-size: 0.9rem;
@@ -329,12 +334,44 @@ footer{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  a{
+
+  a {
     text-decoration: none;
     color: var(--font-color);
     transition: all 0.3s;
   }
-  a:hover{
+
+  a:hover {
     color: var(--font-muted-color);
+  }
+}
+
+@media (max-width: 1040px) {
+  main {
+    display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  main>div:nth-child(1) {
+    padding: 20px;
+    min-height: 50vw;
+    height: 50vw;
+
+    >div {
+      width: 100%;
+      max-width: 72vh;
+      aspect-ratio: 16/10;
+    }
+  }
+}
+
+@media (max-width: 520px){
+  nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
   }
 }
